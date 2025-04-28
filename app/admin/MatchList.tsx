@@ -1,9 +1,7 @@
 import { MagicCard } from '@/components/magicui/magic-card';
-import { ShimmerButton } from '@/components/magicui/shimmer-button';
-import { ShinyButton } from '@/components/magicui/shiny-button';
 import { db } from '@/lib/firebase';
 import { PlayerType, TeamType } from '@/type';
-import { onValue, ref, set } from 'firebase/database';
+import { onValue, ref, } from 'firebase/database';
 import { useEffect, useState } from 'react';
 
 export default function MatchList() {
@@ -34,14 +32,14 @@ export default function MatchList() {
 		return () => unsubscribe();
 	}, []);
 
-	const shufflePlayers = (players: PlayerType[]) => {
-		// Shuffle players to randomize the selection for each squad
-		for (let i = players.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[players[i], players[j]] = [players[j], players[i]]; // Swap elements
-		}
-		return players;
-	};
+	// const shufflePlayers = (players: PlayerType[]) => {
+	// 	// Shuffle players to randomize the selection for each squad
+	// 	for (let i = players.length - 1; i > 0; i--) {
+	// 		const j = Math.floor(Math.random() * (i + 1));
+	// 		[players[i], players[j]] = [players[j], players[i]]; // Swap elements
+	// 	}
+	// 	return players;
+	// };
 
 	return (
 		<>
